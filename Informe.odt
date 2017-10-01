@@ -1,0 +1,60 @@
+﻿Practica 3 – Simulador de Máquina Turing
+
+1. Objetivo de la práctica
+
+	La práctica consiste en programar un simulador de una máquina de Turing multicinta.
+
+
+2. Implementación
+
+	El programa cuenta con cuatro clases diferentes para implementar cada una de las herramientas necesarias para el correcto funcionamiento de la máquina.
+
+	La clase principal clase Main, la cual nos pregunta de qué forma queremos introducir la cadena de entrada, ya sea desde fichero o desde teclado. A su vez carga del fichero maquina.txt cada una de las transiciones del autómata y nos permite realizar las llamadas necesarias para ejecutar el programar y comprobar el resultado.
+
+	La clase clase Cinta, que contiene un array con la cadena de entrada con cada elemento en sus posiciones, la clase Main se encarga de leer la cadena de entrada y llama a la clase Cinta pasándole esta cadena, y la propia clase se encarga de procesarla.
+
+	La clase Estado, esta clase representa cada uno de los estados de la maquina, y a su vez almacena un array para cada estado con las transiciones de este estado hacia los demás.
+
+	Por último tenemos la clase transición, que es la que almacena cada una de las transiciones, es decir, el carácter que leemos, el carácter que escribimos, hacia qué lado de la cinta nos movemos, y al estado al que avanzamos.
+
+
+
+
+
+
+
+
+
+
+
+3. Definición de la máquina
+
+Estados: {0, 1, 2}
+Alfabeto: {a, b}
+Alfabeto de cinta: {a,  b, $}
+Estado inicial: {0}
+Símbolo blanco de la máquina: {$}
+Estados finales: {2}
+Transiciones:
+	Estado 0:
+			(b b R 0) | ($ $ S 0)
+			(a a R 0) | ($ a R 0)
+			($ $ L 1) | ($ $ R 1)
+
+	Estado 1
+			(b b L 1) | ($ b R 1)
+			(a a L 1) | ($ $ S 1)
+			($ $ R 2) | ($ $ L 2)
+	Estado 2
+
+
+4. Forma de Trabajo
+
+	El trabajo ha sido desarrollado en el lenguaje de programación java de forma local usando el IDE Eclipse.
+
+
+5. Autor
+
+Nombre: Jonathan Trujillo Estévez
+Código alu: alu0100606324
+Correo electrónico: alu0100606324@ull.edu.es
